@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire de Recensement</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <div class="logo-container">
+                <div class="logo-wrapper">
+                    <img src="img/IMG-20240320-WA0057-removebg-preview.png" alt="Logo" class="logo">
+                </div>
+                <h2>Formulaire de recensement des Gabonais membres du Collectif Nkongô ayant ouvert des activités génératrices de revenus depuis 2023</h2>
+                <form id="recensementForm" action="https://formspree.io/f/xovvpykr" method="POST">
+                    <label for="nom_prenom">Noms et Prénoms:</label>
+                    <input type="text" id="nom_prenom" name="nom_prenom" required>
+
+                    <label for="date_naissance">Date de naissance:</label>
+                    <input type="date" id="date_naissance" name="date_naissance" required>
+
+                    <label for="lieu_naissance">Lieu de naissance:</label>
+                    <input type="text" id="lieu_naissance" name="lieu_naissance" required>
+
+                    <label for="nationalite">Nationalité:</label>
+                    <input type="text" id="nationalite" name="nationalite" required>
+
+                    <label for="profession">Profession:</label>
+                    <input type="text" id="profession" name="profession" required>
+
+                    <label for="localite">Localité:</label>
+                    <input type="text" id="localite" name="localite" required>
+
+                    <label for="secteur_activite">Secteur d'activité:</label>
+                    <input type="text" id="secteur_activite" name="secteur_activite" required>
+
+                    <label for="registre_commercial">Numéro du registre commercial:</label>
+                    <input type="text" id="registre_commercial" name="registre_commercial" required>
+
+                    <label for="type_agrement">Type d'agrément:</label>
+                    <input type="text" id="type_agrement" name="type_agrement" required>
+
+                    <label for="date_creation">Date de création:</label>
+                    <input type="date" id="date_creation" name="date_creation" required>
+
+                    <label for="statut_activite">Statut de l'activité:</label>
+                    <select id="statut_activite" name="statut_activite" required>
+                        <option value="actif">Actif</option>
+                        <option value="inactif">En Sommeil</option>
+                    </select>
+
+                    <label for="telephone">Téléphone:</label>
+                    <input type="tel" id="telephone" name="telephone" required>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <button type="submit">Envoyer</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+       fetch('https://formspree.io/f/xovvpykr', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+    },
+    body: JSON.stringify(Object.fromEntries(formData))
+})
+
+    </script>
+
+    <br><br>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; Lionel Concept / Janvier 2025</p>
+    </footer>
+</body>
+</html>

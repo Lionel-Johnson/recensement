@@ -1,0 +1,107 @@
+/* Styles généraux */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden; /* Assure qu'il n'y a pas de barre de défilement horizontale */
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%; /* Utilisation de min-height pour s'assurer que la hauteur est 100% de la page */
+    background-image: url('img/IMG_20241212_123314_718.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.form-container {
+    background-color: rgba(79, 135, 127, 0.8); /* Légèrement transparent pour que l'image soit visible en arrière-plan */
+    padding: 30px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 600px;
+    box-sizing: border-box; /* Pour que le padding ne dépasse pas la largeur du conteneur */
+}
+
+.logo-container {
+    margin-bottom: 20px;
+  }
+  
+  .logo-wrapper {
+    display: inline-block;
+    padding: 2px; /* Ajouter de l'espace autour du logo */
+    border-radius: 50%; /* Rendre les coins arrondis, optionnel */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Légère ombre pour l'effet visuel */
+  }
+  
+  .logo {
+    max-width: 100%;
+    height: auto;
+    width: 120px; /* Ajuste la taille du logo */
+  }
+  
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input, select {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+/* Styles du footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    font-size: 14px;
+}
+
+footer p {
+    margin: 0;
+}
+
+
+/* Responsive */
+@media (max-width: 600px) {
+    .form-container {
+        padding: 15px;
+    }
+}
