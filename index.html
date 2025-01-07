@@ -7,13 +7,17 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    
     <div class="container">
         <div class="form-container">
             <div class="logo-container">
                 <div class="logo-wrapper">
-                    <img src="img/IMG-20240320-WA0057-removebg-preview.png" alt="Logo" class="logo">
+                    <img src="img/logo nkongo.png" alt="Logo" class="logo">
+                    <div class="flag-wrapper">
+                        <img src="img/R (5).jpeg" alt="Drapeau du Gabon" class="flag">
+                    </div>
                 </div>
-                <h2>Formulaire de recensement des Gabonais membres du Collectif Nkongô ayant ouvert des activités génératrices de revenus depuis 2023</h2>
+                <h2>Formulaire de recensement des Gabonais membres du Collectif Nkongô ayant ouvert des activités génératrices de revenus depuis 2023</h2>                
                 <form id="recensementForm" action="https://formspree.io/f/xovvpykr" method="POST">
                     <label for="nom_prenom">Noms et Prénoms:</label>
                     <input type="text" id="nom_prenom" name="nom_prenom" required>
@@ -56,13 +60,23 @@
 
                     <label for="email">Email:</label>
                     <input type="email" id="email" name="email" required>
-
+                    <form action="/upload" method="post" enctype="multipart/form-data">
+                        <label for="file">Choisissez un fichier :</label>
+                        <input type="file" id="file" name="file" accept="image/*, .pdf">
+                        <button type="submit">Envoyer</button>
+                      </form>
+                      <br><br>
                     <button type="submit">Envoyer</button>
                 </form>
             </div>
         </div>
+        
     </div>
-
+    <div class="horizontal-banner">
+        <div class="banner-content">
+            <img src="img/Formulaire.png" alt="Bande Passante" style="height: 100px; margin-top: 25px;">
+        </div>
+    </div>
     <script>
        fetch('https://formspree.io/f/xovvpykr', {
     method: 'POST',
@@ -72,13 +86,22 @@
     },
     body: JSON.stringify(Object.fromEntries(formData))
 })
-
     </script>
 
     <br><br>
+    <br><br>
+    <!-- Bande passante verticale -->
+
+
+    <br>
+    <br>
     <!-- Footer -->
     <footer>
         <p>&copy; Lionel Concept / Janvier 2025</p>
     </footer>
 </body>
 </html>
+
+
+
+     

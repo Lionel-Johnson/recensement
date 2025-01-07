@@ -23,7 +23,7 @@ body, html {
 }
 
 .form-container {
-    background-color: rgba(79, 135, 127, 0.8); /* Légèrement transparent pour que l'image soit visible en arrière-plan */
+    background-color: rgba(143, 164, 161, 0.8); /* Légèrement transparent pour que l'image soit visible en arrière-plan */
     padding: 30px;
     border-radius: 10px;
     width: 100%;
@@ -37,16 +37,27 @@ body, html {
   
   .logo-wrapper {
     display: inline-block;
-    padding: 2px; /* Ajouter de l'espace autour du logo */
+    padding: 1px; /* Ajouter de l'espace autour du logo */
     border-radius: 50%; /* Rendre les coins arrondis, optionnel */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Légère ombre pour l'effet visuel */
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1); /* Légère ombre pour l'effet visuel */
   }
   
   .logo {
     max-width: 100%;
     height: auto;
-    width: 120px; /* Ajuste la taille du logo */
+    width: 90px; /* Ajuste la taille du logo */
   }
+  
+  .flag-wrapper {
+    flex: 0 0 auto;
+}
+.flag {
+    width: 100px; /* Ajustez la taille selon vos besoins */
+    height: auto;
+    display: block;
+    margin-left: 300px;
+    margin-top: -80px;
+}
   
 h2 {
     text-align: center;
@@ -83,16 +94,54 @@ button:hover {
     background-color: #45a049;
 }
 /* Styles du footer */
+/* Footer fixe */
 footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 15px;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    font-size: 14px;
+    position: fixed; /* Fixe le footer en bas de l'écran */
+    bottom: 0; /* Aligné au bas de la fenêtre */
+    width: 100%; /* Occupe toute la largeur de la page */
+    background: #333; /* Couleur de fond (modifiable) */
+    color: #fff; /* Couleur du texte */
+    text-align: center; /* Centrage du texte */
+    padding: 10px 0; /* Espacement vertical à l'intérieur du footer */
+    z-index: 1000; /* Priorité visuelle par rapport à d'autres éléments */
 }
+
+/* Conteneur principal de la bande */
+.horizontal-banner {
+    width: auto; /* Occupe toute la largeur de la page */
+    height:100px; /* Hauteur réduite à 3 cm */
+ 
+    position: relative; /* Positionnement pour le contenu interne */
+    border: 1px solid #cccccc; /* Optionnel : bordure */
+}
+
+/* Conteneur pour l'image avec animation */
+.banner-content {
+    display: inline-block;
+    position: absolute; /* Pour permettre le défilement fluide */
+    top: 0;
+    left: 0;
+    width: auto; /* Largeur naturelle de l'image */
+    animation: scroll-horizontal 8s linear infinite; /* Animation de défilement */
+}
+
+/* Image */
+.banner-content img {
+    height: 60%; /* Ajuste la hauteur de l'image à celle de la bande */
+    width: auto; /* Conserve les proportions de l'image */
+    margin-top: 80px; /* Distance entre la bande et le formulaire */
+}
+
+/* Animation pour le défilement horizontal */
+@keyframes scroll-horizontal {
+    0% {
+        transform: translateX(100%); /* Départ hors de l'écran à droite */
+    }
+    100% {
+        transform: translateX(-100%); /* Fin hors de l'écran à gauche */
+    }
+}
+
 
 footer p {
     margin: 0;
